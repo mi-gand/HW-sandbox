@@ -1,4 +1,4 @@
-package org.example.factory;
+package org.example.designPatterns.factory;
 
 import java.util.function.Supplier;
 

@@ -1,4 +1,4 @@
-package org.example.proxy;
+package org.example.designPatterns.proxy;
 
 /*
     Не до конца понял задание, но уловил его вайб и суть паттерна

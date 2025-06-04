@@ -1,7 +1,7 @@
-package org.example.factory;
+package org.example.designPatterns.factory;
 
-import static org.example.factory.CoffeeType.AMERICANO;
-import static org.example.factory.CoffeeType.ESPRESSO;
+import static org.example.designPatterns.factory.CoffeeType.AMERICANO;
+import static org.example.designPatterns.factory.CoffeeType.ESPRESSO;
 
 public abstract class Coffee {
     public abstract void create();

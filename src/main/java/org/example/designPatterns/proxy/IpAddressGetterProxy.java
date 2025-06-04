@@ -1,4 +1,4 @@
-package org.example.proxy;
+package org.example.designPatterns.proxy;
 
 import java.io.IOException;
 import java.nio.file.Files;

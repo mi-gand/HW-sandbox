@@ -1,4 +1,4 @@
-package org.example.adapter;
+package org.example.designPatterns.adapter;
 
 public class Computer {
     public void readFromUsb(UsbInterface device) {

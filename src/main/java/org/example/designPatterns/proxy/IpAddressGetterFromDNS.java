@@ -1,4 +1,4 @@
-package org.example.proxy;
+package org.example.designPatterns.proxy;
 
 public class IpAddressGetterFromDNS implements IpAddressGetter{
 
