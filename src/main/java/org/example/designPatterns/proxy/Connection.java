@@ -13,7 +13,7 @@ public class Connection {
     public static final String STACKOVERFLOW = "stackoverflow.com";
 
     public static void main(String[] args) {
-        IpAddressGetterProxy ipAddressViaHosts = new IpAddressGetterProxy();
+        IpAddressGetter ipAddressViaHosts = new IpAddressGetterProxy();
         System.out.println(ipAddressViaHosts.getIp(GOOGLE));
         System.out.println(ipAddressViaHosts.getIp(FACEBOOK));
         System.out.println(ipAddressViaHosts.getIp("Some site"));

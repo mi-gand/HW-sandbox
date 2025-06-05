@@ -19,7 +19,7 @@ public class IpAddressGetterProxy implements IpAddressGetter {
 
     private String checkHostsFile(String dns){
 
-        Path hostsPath = Path.of("src", "main", "java", "org", "example", "proxy", "hosts");
+        Path hostsPath = Path.of("src", "main", "java", "org", "example","designPatterns", "proxy", "hosts");
 
         try (Stream<String> lines = Files.lines(hostsPath)) {
             return lines
