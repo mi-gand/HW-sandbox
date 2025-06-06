@@ -11,15 +11,15 @@ public class IpAddressGetterProxy implements IpAddressGetter {
     @Override
     public String getIp(String dns) {
         String ip = checkHostsFile(dns);
-        if(ip == null) {
+        if (ip == null) {
             return ipAddressGetterFromDNS.getIp(dns);
         }
         return ip;
     }
 
-    private String checkHostsFile(String dns){
+    private String checkHostsFile(String dns) {
 
-        Path hostsPath = Path.of("src", "main", "java", "org", "example","designPatterns", "proxy", "hosts");
+        Path hostsPath = Path.of("src", "main", "java", "org", "example", "designPatterns", "proxy", "hosts");
 
         try (Stream<String> lines = Files.lines(hostsPath)) {
             return lines

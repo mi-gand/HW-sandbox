@@ -1,7 +1,6 @@
 package org.example.designPatterns.factory;
 
-import static org.example.designPatterns.factory.CoffeeType.AMERICANO;
-import static org.example.designPatterns.factory.CoffeeType.ESPRESSO;
+import static org.example.designPatterns.factory.CoffeeType.*;
 
 public abstract class Coffee {
     public abstract void create();
@@ -9,44 +8,51 @@ public abstract class Coffee {
     public static void main(String[] args) {
         CoffeeMachine.start(ESPRESSO);
         CoffeeMachine.start(AMERICANO);
+        CoffeeMachine.start(LATTE);
     }
 }
 
 class Americano extends Coffee {
-    public void create(){
+    public void create() {
         System.out.println("Actions for Americano");
     }
 }
 
-class Espresso extends Coffee{
-    public void create(){
+class Espresso extends Coffee {
+    public void create() {
         System.out.println("Actions for Espresso");
     }
 }
 
+class Latte extends Coffee {
+    public void create() {
+        System.out.println("Actions for Latte");
+    }
+}
+
 class CoffeeMachine {
-    public static void start(CoffeeType order){
+    public static void start(CoffeeType order) {
         firstStep();
         CoffeeFabric.getCoffee(order).create();
         lastStep();
     }
-    private static void firstStep(){
+
+    private static void firstStep() {
         System.out.println("turned on and rinsed the coffee machine");
     }
-    private static void lastStep(){
+
+    private static void lastStep() {
         System.out.println("coffee is ready");
     }
 }
 
-class CoffeeFabric{
-    public static Coffee getCoffee(CoffeeType coffeeType){
-        Coffee order;
-        switch (coffeeType){
-            case ESPRESSO -> order = ESPRESSO.getCoffee();
-            case AMERICANO -> order = AMERICANO.getCoffee();
-            default -> throw new IllegalArgumentException("Wrong type");
-        }
-        return order;
+class CoffeeFabric {
+    public static Coffee getCoffee(CoffeeType coffeeType) {
+        return switch (coffeeType) {
+            case ESPRESSO -> ESPRESSO.getCoffee();
+            case AMERICANO -> AMERICANO.getCoffee();
+            case LATTE -> LATTE.getCoffee();
+        };
     }
 }
 

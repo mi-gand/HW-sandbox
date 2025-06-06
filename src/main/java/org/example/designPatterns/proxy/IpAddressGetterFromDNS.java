@@ -1,6 +1,6 @@
 package org.example.designPatterns.proxy;
 
-public class IpAddressGetterFromDNS implements IpAddressGetter{
+public class IpAddressGetterFromDNS implements IpAddressGetter {
 
     @Override
     public String getIp(String dns) {
